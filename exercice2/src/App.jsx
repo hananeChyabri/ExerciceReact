@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import ListProduit from './components/ListProduit.jsx';
+import { nanoid } from 'nanoid';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const produittist = [
+    {id: nanoid(), nom: 'Lait', prix: 25 , EnPromo: true},
+    {id: nanoid(), nom: 'Chocolat', prix: 15 , EnPromo: false},
+    {id: nanoid(), nom: 'riz', prix: 25 , EnPromo: true},
+    {id: nanoid(), nom: 'Lait', prix: 25 , EnPromo: false},
+    {id: nanoid(), nom: 'pates', prix: 7 , EnPromo: true},
+  ]
+
+ 
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ListProduit produits={produittist} />
   )
+
 }
 
 export default App
