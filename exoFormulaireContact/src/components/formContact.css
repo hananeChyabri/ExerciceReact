@@ -1,0 +1,50 @@
+/* input
+{
+    width: 250px;
+    
+}
+
+label{
+    font-size: 18px;
+}
+div{
+
+    text-align: left;
+   
+} */
+
+
+form {
+    border: 1px solid rgb(64, 54, 54);
+    padding: 10px;
+}
+
+label {
+    margin-right: 90px;
+}
+
+div {
+
+    text-align: left;
+
+
+}
+
+
+
+input,
+textarea {
+
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(220, 203, 203);
+    border-radius: 4px;
+
+
+}
+
+/* Style de l'input checkbox */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+

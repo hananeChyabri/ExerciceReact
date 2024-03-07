@@ -1,13 +1,12 @@
-import formContact from './components/formContact.jsx';
+
 import './App.css'
+import FormContact from './components/formContact.jsx';
 
 function App() {
 
 
   return (
-    <>
-      
-    </>
+  <FormContact/>
   )
 }
 
