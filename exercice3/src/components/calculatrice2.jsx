@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 
 
-function Calculatrice() {
+function Calculatrice2() {
 
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
@@ -11,14 +11,14 @@ function Calculatrice() {
   const operators = ['+', '-', '*', '/'];
 
   // Création d'une fonction qui va gérer la valeur de num 1
-  const handleNum1 = (event) => {
-    setNum1(() => event.target.value)
+  const handleChange = (inputName,value) => {
+   inputName === 'First number' ? setNum1(value): null;
+   inputName === 'Second number' ? setNum2(value): null;
+   inputName === 'Operator' ? setOperator(value): null;
+
   }
 
-  // Création d'une fonction qui va gérer la valeur de num 1
-  const handleNum2 = (event) => {
-    setNum2(() => event.target.value)
-  }
+
 
 
   const calculate = () => {
@@ -34,6 +34,7 @@ function Calculatrice() {
         result = parseFloat(num1) * parseFloat(num2);
         break;
       case '/':
+      parseFloat(num2)=== 0 ?  result = "division par 0 impossible" :
         result = parseFloat(num1) / parseFloat(num2);
         break;
       default:
@@ -46,10 +47,10 @@ function Calculatrice() {
     <div>
       <input
         type="number"
-        value={num1} onChange={handleNum1}
+        value={num1} onChange={(event)=>handleChange("First number",event.target.value)}
 
       />
-      <select value={operator} onChange={(event) => setOperator(event.target.value)}>
+      <select value={operator} onChange={(event)=>handleChange("Operator",event.target.value)}>
         {operators.map((op, index) => (
           <option key={index} value={op}>
             {op}
@@ -58,8 +59,7 @@ function Calculatrice() {
       </select>
       <input
         type="number"
-        value={num2}
-        onChange={handleNum2}
+        value={num2} onChange={(event)=>handleChange("Second number",event.target.value)}
       />
       <button onClick={calculate}>=</button>
       <p>Résultat : {result}</p>
@@ -68,4 +68,4 @@ function Calculatrice() {
 
 }
 
-export default Calculatrice;
+export default Calculatrice2;
